@@ -1,0 +1,171 @@
+{
+  "produtos": [
+    {
+      "img": "https://m.media-amazon.com/images/I/31SaIiwj4LL._AA210_.jpg",    
+      "titulo": "Liquidificador, B1000, 3L, Preto, 220V, Britânia",
+      "marca": "Brittânia",
+      "valor": 129.10, 
+      "categoria": "Casa e Cozinha", 
+      "id": 1
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/41BXP6dlp1L._AA210_.jpg",
+      "titulo": "KIT FAQUEIRO + MALETA 25PÇS COM DETALHES PADRÃO EUROPEU",
+      "marca": "Swiss Inox",
+      "valor": 199.70, 
+      "categoria": "Casa e Cozinha",
+      "id": 2
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/31dDYezUn3L._SY500__AA210_.jpg",
+      "titulo": "Bomba Elétrica Filtro Para Galão de Água 10 20 litros com Dispensador Automática Cor:Branco (UT)",
+      "marca": "123 Útil",
+      "valor": 25.41, 
+      "categoria": "Casa e Cozinha",
+      "id": 3
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/31se-gsbHXL.jpg",
+      "titulo": "Caneca térmica Stanley, 709 ml",
+      "marca": "Stanley",
+      "valor": 229.80, 
+      "categoria": "Casa e Cozinha",
+      "id": 4
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/41LBp+ttj2L._AA210_.jpg",
+      "titulo": "Cafeteira Mallory Star Wars 127v Preto",
+      "marca": "Mallory",
+      "valor": 109.99, 
+      "categoria": "Casa e Cozinha",
+      "id": 5
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/41szYeLmAGL._AA210_.jpg",
+      "titulo": "Jogo 5 Panelas Luxo Alumínio Batido Tampa Vidro Preto- Absoluto Metais",
+      "marca": "Vila do Churrasco",
+      "valor": 195.49, 
+      "categoria": "Casa e Cozinha",
+      "id": 6
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/41AFUrTO3dL._AA210_.jpg",
+      "titulo": "Smart TV LED 24 Monitor LG 24TL520S",
+      "marca": "LG",
+      "valor": 999.00, 
+      "categoria": "Eletrônicos e Tecnologia",
+      "id": 7
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/31eHoa21-6L._AA210_.jpg",
+      "titulo": "Headphone Wireless BT Preto TAH1205BK/00S",
+      "marca": "Philips",
+      "valor": 89.90, 
+      "categoria": "Eletrônicos e Tecnologia",
+      "id": 8
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/612OV6v8bES._AC_UL320_.jpg",
+      "titulo": "LG TV Smart 4K Nanocell 50 50NANO75SPA",
+      "marca": "LG",
+      "valor": 2899.99, 
+      "categoria": "Eletrônicos e Tecnologia",
+      "id": 9
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/411IbNuYK-S._AA210_.jpg",
+      "titulo": "Câmera GoPro HERO9 Black - Standard Bundle",
+      "marca": "GoPro",
+      "valor": 2938.72, 
+      "categoria": "Eletrônicos e Tecnologia",
+      "id": 10
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/51EEiMW81WL._AA210_.jpg",
+      "titulo": "Pc Gamer Completo Hércules Intel i3 GT 730 4GB 8GB HD 500GB Wi-fi",
+      "marca": "AMORIM",
+      "valor": 3799.00, 
+      "categoria": "Eletrônicos e Tecnologia", "id": 11
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/41ehBrjhayL._AA210_.jpg",
+      "titulo": "As confissões de Arsène Lupin",
+      "marca": "Principis",
+      "valor": 9.90, 
+      "categoria": "Livros", 
+      "id": 12
+    },
+    {
+      "img": "https://images-na.ssl-images-amazon.com/images/I/41v9H-2YtdL._AC_SR400,600_.jpg",
+      "titulo": "1984",
+      "marca": "Companhia das Letras",
+      "valor": 61.90, 
+      "categoria": "Livros", 
+      "id" : 13
+    },
+    {
+      "img": "https://images-na.ssl-images-amazon.com/images/I/51r+M2bjV7L._AC_SR400,600_.jpg",
+      "titulo": "Os Irmãos Karamazov",
+      "marca": "Editora 34",
+      "valor": 25.00, 
+      "categoria": "Livros", 
+      "id": 14
+    }, 
+    {
+      "img": "https://images-na.ssl-images-amazon.com/images/I/51NR0nCwz4L._AC_SR400,600_.jpg",
+      "titulo": "Fautos I: Uma Tragédia",
+      "marca": "Editora 34",
+      "valor": 54.90, 
+      "categoria": "Livros", 
+      "id": 15
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/61L7EiP8kEL._AC_UY218_.jpg",
+      "titulo": "Torto Arado",
+      "marca": "Todavia",
+      "valor": 28.10, 
+      "categoria": "Livros",
+      "id": 16
+    },
+    {
+      "img": "https://images-na.ssl-images-amazon.com/images/I/31OOTR0RMqL._AC_SR400,600_.jpg",
+      "titulo": "Hugo Boss Bottled Tonic Eau De Toilette 100Ml",
+      "marca": "Hugo Boss",
+      "valor": 255.00, 
+      "categoria": "Beleza", 
+      "id": 17
+    },
+    {
+      "img": "https://images-na.ssl-images-amazon.com/images/I/61R-z5IwS8L._AC._SR360,460.jpg",
+      "titulo": "Gel Hidratante Facial Hydro Boost Water FPS 25",
+      "marca": "Neutrogena",
+      "valor": 40.33, 
+      "categoria": "Beleza", 
+      "id": 18
+    },
+    {
+      "img": "https://images-na.ssl-images-amazon.com/images/I/51XL2QMmLNL._AC._SR360,460.jpg",
+      "titulo": "Mineral 89 50 ml Transparente",
+      "marca": "Vichy",
+      "valor": 147.95, 
+      "categoria": "Beleza", 
+      "id": 19
+    },
+    {
+      "img": "https://images-na.ssl-images-amazon.com/images/I/31xvV-hbXuL._AC_SX184_.jpg",
+      "titulo": "Barbeador elétrico seco ou molhado Shaver 1100, Azul Malibu",
+      "marca": "Philips",
+      "valor": 157.52, 
+      "categoria": "Beleza", 
+      "id": 20
+    },
+    {
+      "img": "https://images-na.ssl-images-amazon.com/images/I/31p4fOzwWHL._AC_SX184_.jpg",
+      "titulo": "Leave In Urban Men",
+      "marca": "Urbna",
+      "valor": 15.90, 
+      "categoria": "Beleza", 
+      "id": 21
+    }
+  ]
+}

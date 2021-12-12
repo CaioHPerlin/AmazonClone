@@ -1,0 +1,27 @@
+.card {
+  text-align: center;  
+}
+
+p.nome{
+  text-align: left;
+}
+
+p.preco {  
+  font-size: 22px;
+}
+
+p.restaurante{
+  text-align: center;
+}
+
+.card button {
+  border: none;  
+}
+
+.card img {
+  max-width: 30%;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}

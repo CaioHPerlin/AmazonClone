@@ -1,0 +1,12 @@
+{
+  "usuario":
+  {
+   "nome":"Rodrigo Duran", 
+   "local": "Nova Andradina/MS",
+   "categoriasPref": 
+   [
+     "Livros", 
+     "Eletrônicos e Tecnologia"
+   ]
+  }
+}
