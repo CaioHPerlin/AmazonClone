@@ -26,7 +26,7 @@ const carregaDados = function(){
 
 
 function init() {
-  carregaDados()   
+  carregaDados()
 }
 
 function carregaCarrinho(produtosCarrinho) {
@@ -149,7 +149,6 @@ const carregarLivrosClick = function(){
   apenasLivros = dadosProdutos.produtos.filter(filterLivros) 
   carregaProdutos(apenasLivros, "Livros")
 }
-
 
 const comprarItemClick = function (){
   console.log("Comprando item ", this.id)

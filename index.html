@@ -1,70 +1,82 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>IFAmazon</title>
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon.ico"/>
-  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />
+	<link rel="stylesheet" href="./css/bootstrap.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="./css/app.css">
 </head>
+
 <body onload="init()">
-	<header>
+	<header class="container-fluid text-white link-unstyled">
 		<!--Primeira Linha-->
-		<div>
-			<!--Aqui deve ser colocado a logomarca da Amazon com o link-->
-		</div>
-		<div>
-			<!--Aqui ficara o link com # para entregas para o Brasil-->
-		</div>
-		<div>
-			<!--Local destinado a barra de pesquisa-->
-		</div>
-		<div>
-			<!--Menu Dropdown com os idiomas utilizar apenas inglês português e espanhol-->
-		</div>
-		<div>
-			<!--Colocar o dropdown apenas com o botão para ir para a tela de login e fazer a tela de login-->
-		</div>
-		<div>
-			<!--Fazer apenas um link com # para Returns & Oders-->
-		</div>
-		<div>
-			<!--Fazer apenas um link com # para o carrinho de compras-->
+		<div class="row px-2 py-3">
+			<div class="col-lg-1">
+				<!--Aqui deve ser colocado a logomarca da Amazon com o link-->
+				<a href="index.html" class="text-white link-unstyled d-inline-flex">
+					<img class="logo" src="./img/logo-amazon.svg" alt="Amazon">
+					.com.br
+				</a>
+			</div>
+			<div class="col-lg-1">
+				<!--Aqui ficara o link com # para entregas para o Brasil-->
+				Olá <span id="username"></span> que mora em <span id="location"></span> 
+				<i class="bi bi-geo-alt"></i>
+			</div>
+			<div>
+				<!--Local destinado a barra de pesquisa-->
+			</div>
+			<div>
+				<!--Menu Dropdown com os idiomas utilizar apenas inglês português e espanhol-->
+			</div>
+			<div>
+				<!--Colocar o dropdown apenas com o botão para ir para a tela de login e fazer a tela de login-->
+			</div>
+			<div>
+				<!--Fazer apenas um link com # para Returns & Oders-->
+			</div>
+			<div>
+				<!--Fazer apenas um link com # para o carrinho de compras-->
+			</div>
 		</div>
 		<!--Segunda linha Linha-->
 		<nav>
 			<!--Desenvolver o menu horizontal-->
-      <button onclick="carregarLivrosClick()">Livros</button> 
+			<!--<button onclick="carregarLivrosClick()">Livros</button>-->
 		</nav>
 		<div>
 			<!--Colocar um link # para o Shop Cyber Monday deals-->
 		</div>
 	</header>
-   <section>
-   	 <article>
-   	 	<!--Fazer um carrossel com os banners da pasta img-->
-   	 </article>
-   	 <article>
-   	 	<!--Aqui a estrutura pode ser livre desde que tenha quatro produtos por linha quando a página for aberta em um desktop e um produto por linha quando for aberto em um smartphone-->
-      <div id="containerCategoria">
-      </div>  
-      <div id="containerProdutos">
-      </div>  
-      <div id="containerCarrinho">
-      </div>  
-   	 </article>
-   	 <aside>
-   	 	<!--Do lado direito ocupando toda a extensão vertical do section colocar propagandas do amazon prime-->
-   	 </aside>
-   </section>
-   <footer>
-   	<!--Primeira linha-->
-   	<div>
-   		<!-- Back to top -->
-   	</div>
-   	<!--Segunda linha-->
-   	<div>
-   		<!-- Get to Know Us
+	<section>
+		<article>
+			<!--Fazer um carrossel com os banners da pasta img-->
+		</article>
+		<article>
+			<!--Aqui a estrutura pode ser livre desde que tenha quatro produtos por linha quando a página for aberta em um desktop e um produto por linha quando for aberto em um smartphone-->
+			<div id="containerCategoria">
+			</div>
+			<div id="containerProdutos">
+			</div>
+			<div id="containerCarrinho">
+			</div>
+		</article>
+		<aside>
+			<!--Do lado direito ocupando toda a extensão vertical do section colocar propagandas do amazon prime-->
+		</aside>
+	</section>
+	<footer>
+		<!--Primeira linha-->
+		<div>
+			<!-- Back to top -->
+		</div>
+		<!--Segunda linha-->
+		<div>
+			<!-- Get to Know Us
 			 (Colocar em formato de lista não ordenada de links com #)
 			 Careers
 			 Blog
@@ -73,8 +85,8 @@
 			 Amazon Devices
 			-->
 
-   	</div>
-   	<!-- Get to Know Us
+		</div>
+		<!-- Get to Know Us
       Make Money with Us
       (Colocar em formato de lista não ordenada de links com #)
 	Sell products on Amazon
@@ -86,17 +98,17 @@
 	Host an Amazon Hub
 	›See More Make Money with Us
      -->
-   	<div>
-   		<!-- 	
+		<div>
+			<!-- 	
 			Amazon Payment Products
 			 (Colocar em formato de lista não ordenada de links com #)
 			Amazon Business Card
 			Shop with Points
 			Reload Your Balance
 			Amazon Currency Converter-->
-   	</div>
-   	<div>
-   		<!--Let Us Help You
+		</div>
+		<div>
+			<!--Let Us Help You
    			(Colocar em formato de lista não ordenada de links com #)
 		Amazon and COVID-19
 		Your Account
@@ -106,11 +118,12 @@
 		Manage Your Content and Devices
 		Amazon Assistant
 		Help-->
-   	</div>
-   	<div>
-   		<!--Colocar a ultima linha com o copyright centralizado-->
-   	</div>
-   </footer>
-   <script src="/js/script.js"></script>
+		</div>
+		<div>
+			<!--Colocar a ultima linha com o copyright centralizado-->
+		</div>
+	</footer>
+	<script src="./js/script.js"></script>
 </body>
+
 </html>
