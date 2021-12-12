@@ -155,3 +155,5 @@ const comprarItemClick = function (){
   let produto = dadosProdutos.produtos.filter( produto => produto.id == this.id)[0]
   console.log(produto)
 }
+
+console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAA")
