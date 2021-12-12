@@ -4,14 +4,18 @@
     --tertiary: #37475A;
   }
   
-  .link-unstyled, .link-unstyled:link, .link-unstyled:hover {
-    color: inherit;
-    text-decoration: inherit;
+  .links-unstyled a, .links-unstyled a:link, .links-unstyled a:hover {
+    color: inherit !important;
+    text-decoration: inherit !important;
   }
   
   header{
     background-color: var(--primary) !important;
     height: 60px;
+  }
+
+  header a:hover{
+    outline: 1px solid white;
   }
   
   .logo{
