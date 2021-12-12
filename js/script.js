@@ -156,4 +156,3 @@ const comprarItemClick = function (){
   console.log(produto)
 }
 
-console.log("AAAAAAAAA")
