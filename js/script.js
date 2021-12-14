@@ -10,7 +10,9 @@ var loadFile = function (filePath, done) {
 let dadosUsuario = {}
 let dadosProdutos = {}
 
-const carregaDados = function(){
+let carrinho = []
+
+const carregaDados = function(func){
   console.log("Carregando dados dos produtos ...");  
   loadFile('/data/data.json', function (responseText) {
     dadosProdutos = JSON.parse(responseText)
@@ -19,18 +21,50 @@ const carregaDados = function(){
     loadFile('/data/usuario.json', function (responseText) {
       dadosUsuario = JSON.parse(responseText)    
       console.log("OK dados usuario");
-      return 1
+      func();
+      return 1;
     })
   })
 }
 
+const carregaUsuario = function(){
+  let userNameElement = document.getElementById("username");
+  let userLocationElement = document.getElementById("userlocation");
+
+  userNameElement.innerHTML = dadosUsuario.usuario.nome;
+  userLocationElement.innerHTML = dadosUsuario.usuario.local;
+}
+
+const carregaPref = function(){
+  let categoriasPref = dadosUsuario.usuario.categoriasPref;
+
+  apenasPref = dadosProdutos.produtos.filter((produto => categoriasPref.indexOf(produto.categoria) != -1));
+  
+  carregaProdutos(apenasPref, "");
+}
+
+const setup = function(){
+  carregaUsuario();
+  carregaPref();
+
+  console.log("Setup concluído")
+}
 
 function init() {
-  carregaDados()
+  carregaDados(setup);
+}
+
+const limpaCarrinho = produtosCarrinho => {
+  produtosCarrinho.length = 0;
+  carregaCarrinho(produtosCarrinho);
+}
+
+const removeCarrinho = produtosCarrinho => {
+  produtosCarrinho.pop();
+  carregaCarrinho(produtosCarrinho)
 }
 
 function carregaCarrinho(produtosCarrinho) {
-
   let containerCarrinho = document.getElementById("containerCarrinho")
   let child = containerCarrinho.lastElementChild
   while (child){
@@ -131,7 +165,7 @@ function carregaProdutos(dadosProdutos, categoria) {
 
     //Cria o botão
     //<p><button>Comprar</button></p>
-    let pComprar = document.createElement('p')   
+    let pComprar = document.createElement('p')    
     novaDiv.appendChild(pComprar)
     let bBotao = document.createElement('button')
     bBotao['id'] = produto.id
@@ -153,5 +187,6 @@ const carregarLivrosClick = function(){
 const comprarItemClick = function (){
   console.log("Comprando item ", this.id)
   let produto = dadosProdutos.produtos.filter( produto => produto.id == this.id)[0]
-  console.log(produto)
+  carrinho.push(produto);
 }
+
