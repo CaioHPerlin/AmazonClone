@@ -10,7 +10,9 @@ var loadFile = function (filePath, done) {
 let dadosUsuario = {}
 let dadosProdutos = {}
 
-const carregaDados = function(){
+let carrinho = []
+
+const carregaDados = function(func){
   console.log("Carregando dados dos produtos ...");  
   loadFile('/data/data.json', function (responseText) {
     dadosProdutos = JSON.parse(responseText)
@@ -19,14 +21,38 @@ const carregaDados = function(){
     loadFile('/data/usuario.json', function (responseText) {
       dadosUsuario = JSON.parse(responseText)    
       console.log("OK dados usuario");
-      return 1
+      func();
+      return 1;
     })
   })
 }
 
+const carregaUsuario = function(){
+  let userNameElement = document.getElementById("username");
+  let userLocationElement = document.getElementById("userlocation");
+
+  userNameElement.innerHTML = dadosUsuario.usuario.nome;
+  userLocationElement.innerHTML = dadosUsuario.usuario.local;
+}
+
+const carregaPref = function(){
+  let categoriasPref = dadosUsuario.usuario.categoriasPref;
+
+  apenasPref = dadosProdutos.produtos.filter((produto => categoriasPref.indexOf(produto.categoria) != -1));
+  
+  carregaProdutos(apenasPref, "");
+}
+
+const setup = function(){
+  carregaUsuario();
+  carregaPref();
+
+  console.log("Setup concluído")
+}
 
 function init() {
-  carregaDados()
+  carregaDados(setup);
+
 }
 
 function carregaCarrinho(produtosCarrinho) {
