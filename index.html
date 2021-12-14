@@ -11,13 +11,52 @@
 	<link rel="stylesheet" href="./css/app.css">
 </head>
 
-<body onload="init()" class="container">
+<body onload="init()">
+	<header class="container-fluid text-white links-unstyled">
+		<!--Primeira Linha-->
+		<div class="row py-1">
+			<div class="col-1">
+				<!--Aqui deve ser colocado a logomarca da Amazon com o link-->
+				<a href="index.html" class="px-2 py-2 d-inline-flex">
+					<img class="logo" src="./img/logo-amazon.svg" alt="Amazon">
+					.com.br
+				</a>
+			</div>
+			<div class="col-1">
+				<!--Aqui ficara o link com # para entregas para o Brasil-->
+				<a href="#" class="px-2 py-2 d-inline-flex">
+					<i class="bi bi-geo-alt left"></i>
+					
+				</a>
+			</div>
+			<div>
+				<!--Local destinado a barra de pesquisa-->
+			</div>
+			<div>
+				<!--Menu Dropdown com os idiomas utilizar apenas inglês português e espanhol-->
+			</div>
+			<div>
+				<!--Colocar o dropdown apenas com o botão para ir para a tela de login e fazer a tela de login-->
+			</div>
+			<div>
+				<!--Fazer apenas um link com # para Returns & Oders-->
+			</div>
+			<div>
+				<!--Fazer apenas um link com # para o carrinho de compras-->
+			</div>
+		</div>
+		<!--Segunda linha Linha-->
+		<nav>
+			<!--Desenvolver o menu horizontal-->
+			<!--<button onclick="carregarLivrosClick()">Livros</button>-->
+		</nav>
+		<div>
+			<!--Colocar um link # para o Shop Cyber Monday deals-->
+		</div>
+	</header>
 	<section>
 		<article>
-      <p id="username"></p>
-      <p id="userlocation"></p>
-      <button onclick="carregaCarrinho(carrinho)"><i class="bi bi-cart"></i></button>
-      <button onclick="limpaCarrinho(carrinho)"><i class="bi bi-trash"></i></button>
+			<!--Fazer um carrossel com os banners da pasta img-->
 		</article>
 		<article>
 			<!--Aqui a estrutura pode ser livre desde que tenha quatro produtos por linha quando a página for aberta em um desktop e um produto por linha quando for aberto em um smartphone-->
@@ -29,7 +68,6 @@
 			</div>
 		</article>
 		<aside>
-      <button onclick="removeCarrinho(carrinho)"><i class="bi bi-x"></i></button>
 			<!--Do lado direito ocupando toda a extensão vertical do section colocar propagandas do amazon prime-->
 		</aside>
 	</section>
