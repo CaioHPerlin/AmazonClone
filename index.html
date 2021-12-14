@@ -11,12 +11,13 @@
 	<link rel="stylesheet" href="./css/app.css">
 </head>
 
-<body onload="init()" >
+<body onload="init()" class="container">
 	<section>
 		<article>
       <p id="username"></p>
       <p id="userlocation"></p>
-      <button onclick="carregaCarrinho"></button>
+      <button onclick="carregaCarrinho(carrinho)"><i class="bi bi-cart"></i></button>
+      <button onclick="limpaCarrinho(carrinho)"><i class="bi bi-trash"></i></button>
 		</article>
 		<article>
 			<!--Aqui a estrutura pode ser livre desde que tenha quatro produtos por linha quando a página for aberta em um desktop e um produto por linha quando for aberto em um smartphone-->
@@ -28,6 +29,7 @@
 			</div>
 		</article>
 		<aside>
+      <button onclick="removeCarrinho(carrinho)"><i class="bi bi-x"></i></button>
 			<!--Do lado direito ocupando toda a extensão vertical do section colocar propagandas do amazon prime-->
 		</aside>
 	</section>

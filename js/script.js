@@ -52,11 +52,19 @@ const setup = function(){
 
 function init() {
   carregaDados(setup);
+}
 
+const limpaCarrinho = produtosCarrinho => {
+  produtosCarrinho.length = 0;
+  carregaCarrinho(produtosCarrinho);
+}
+
+const removeCarrinho = produtosCarrinho => {
+  produtosCarrinho.pop();
+  carregaCarrinho(produtosCarrinho)
 }
 
 function carregaCarrinho(produtosCarrinho) {
-
   let containerCarrinho = document.getElementById("containerCarrinho")
   let child = containerCarrinho.lastElementChild
   while (child){
@@ -157,7 +165,7 @@ function carregaProdutos(dadosProdutos, categoria) {
 
     //Cria o botão
     //<p><button>Comprar</button></p>
-    let pComprar = document.createElement('p')   
+    let pComprar = document.createElement('p')    
     novaDiv.appendChild(pComprar)
     let bBotao = document.createElement('button')
     bBotao['id'] = produto.id
@@ -179,6 +187,6 @@ const carregarLivrosClick = function(){
 const comprarItemClick = function (){
   console.log("Comprando item ", this.id)
   let produto = dadosProdutos.produtos.filter( produto => produto.id == this.id)[0]
-  console.log(produto)
+  carrinho.push(produto);
 }
 
