@@ -22,10 +22,6 @@ header{
     white-space: nowrap;
 }
 
-.side-nav .bi{
-    font-size: 17px;
-}
-
 nav *{
     font-weight: 600;
 }
@@ -42,7 +38,13 @@ nav ul li{
 header .search-cat{
     border-radius: 5px 0px 0px 5px;
     max-width: 100px;
+    background-color: #d1d1d1;
 }
+
+header .search-cat:hover{
+  cursor: pointer
+}
+
 
 .search{ 
     border-radius: 0px 5px 5px 0px;
@@ -78,11 +80,13 @@ header .search-cat{
 
 .sub-belt{
     background: var(--secondary);
-    height: 40px;
+    min-height: 40px;
 }
 
 .card {
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 p.nome {
@@ -101,8 +105,13 @@ p.restaurante {
     border: none;
 }
 
-.card img {
-    max-width: 30%;
+.card h1{
+  font-size: 24px;
+}
+
+.card img{
+  width: 30%;
+  margin: 0 auto;
 }
 
 .card button:hover {
@@ -123,6 +132,10 @@ body{
 }
 
 
+.collapse-btn{
+  background: var(--tertiary);
+}
+
 .footer-content{
     background: var(--secondary);
 }
@@ -137,8 +150,13 @@ body{
 }
 
 @media (min-width: 1140px) {
-    section.container-md{
-        max-width: 1500px;
-        margin: 0 auto;
+    .card img {
+      width: 75%;
     }
+}
+
+@media (max-width: 575px){
+  .upper-header{
+    min-height: 150px;
+  }
 }
