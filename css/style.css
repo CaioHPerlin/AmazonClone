@@ -161,12 +161,21 @@ body{
   background-position: center;
 }
 
+.anuncio:hover{
+  cursor: pointer;
+}
+
 @media (min-width: 1140px) {
     .card img {
       width: 75%;
     }
 }
 
+@media (max-width: 1140px){
+  .anuncio{
+    height: 200px;
+  }
+}
 
 
 @media (max-width: 575px){
