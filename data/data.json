@@ -9,28 +9,20 @@
       "id": 1
     },
     {
-      "img": "https://m.media-amazon.com/images/I/41BXP6dlp1L._AA210_.jpg",
-      "titulo": "KIT FAQUEIRO + MALETA 25PÇS COM DETALHES PADRÃO EUROPEU",
-      "marca": "Swiss Inox",
-      "valor": 199.70, 
-      "categoria": "Casa e Cozinha",
-      "id": 2
-    },
-    {
-      "img": "https://m.media-amazon.com/images/I/31dDYezUn3L._SY500__AA210_.jpg",
-      "titulo": "Bomba Elétrica Filtro Para Galão de Água 10 20 litros com Dispensador Automática Cor:Branco (UT)",
-      "marca": "123 Útil",
-      "valor": 25.41, 
-      "categoria": "Casa e Cozinha",
-      "id": 3
-    },
-    {
       "img": "https://m.media-amazon.com/images/I/31se-gsbHXL.jpg",
       "titulo": "Caneca térmica Stanley, 709 ml",
       "marca": "Stanley",
       "valor": 229.80, 
       "categoria": "Casa e Cozinha",
       "id": 4
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/41BXP6dlp1L._AA210_.jpg",
+      "titulo": "KIT FAQUEIRO + MALETA 25PÇS COM DETALHES PADRÃO EUROPEU",
+      "marca": "Swiss Inox",
+      "valor": 199.70, 
+      "categoria": "Casa e Cozinha",
+      "id": 2
     },
     {
       "img": "https://m.media-amazon.com/images/I/41LBp+ttj2L._AA210_.jpg",
@@ -166,6 +158,14 @@
       "valor": 15.90, 
       "categoria": "Beleza", 
       "id": 21
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/31dDYezUn3L._SY500__AA210_.jpg",
+      "titulo": "Bomba Elétrica Filtro Para Galão de Água 10 20 litros com Dispensador Automática Cor:Branco (UT)",
+      "marca": "123 Útil",
+      "valor": 25.41, 
+      "categoria": "Casa e Cozinha",
+      "id": 3
     }
   ]
 }

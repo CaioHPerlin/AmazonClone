@@ -12,14 +12,14 @@ let dadosProdutos = {}
 
 let carrinho = []
 
-const carregaDados = function(func){
-  console.log("Carregando dados dos produtos ...");  
+const carregaDados = function (func) {
+  console.log("Carregando dados dos produtos ...");
   loadFile('/data/data.json', function (responseText) {
     dadosProdutos = JSON.parse(responseText)
     console.log("OK dados produtos");
-    console.log("Carregando dados do usuário ...");  
+    console.log("Carregando dados do usuário ...");
     loadFile('/data/usuario.json', function (responseText) {
-      dadosUsuario = JSON.parse(responseText)    
+      dadosUsuario = JSON.parse(responseText)
       console.log("OK dados usuario");
       func();
       return 1;
@@ -27,7 +27,7 @@ const carregaDados = function(func){
   })
 }
 
-const carregaUsuario = function(){
+const carregaUsuario = function () {
   let userNameElement = document.getElementById("username");
   let userLocationElement = document.getElementById("userlocation");
 
@@ -35,15 +35,13 @@ const carregaUsuario = function(){
   userLocationElement.innerHTML = dadosUsuario.usuario.local;
 }
 
-const carregaPref = function(){
+const carregaPref = function () {
   let categoriasPref = dadosUsuario.usuario.categoriasPref;
-
   apenasPref = dadosProdutos.produtos.filter((produto => categoriasPref.indexOf(produto.categoria) != -1));
-  
-  carregaProdutos(apenasPref, "");
+  carregaProdutos(apenasPref, "Recomendações");
 }
 
-const setup = function(){
+const setup = function () {
   carregaUsuario();
   carregaPref();
 
@@ -64,23 +62,25 @@ const removeCarrinho = produtosCarrinho => {
   carregaCarrinho(produtosCarrinho)
 }
 
+
 function carregaCarrinho(produtosCarrinho) {
   let containerCarrinho = document.getElementById("containerCarrinho")
   let child = containerCarrinho.lastElementChild
-  while (child){
+  while (child) {
     containerCarrinho.removeChild(child)
     child = containerCarrinho.lastElementChild
   }
 
+
   for (let produto of produtosCarrinho) {
     //Cria a div card para o produto
     let novaDiv = document.createElement('div')
-    novaDiv['className'] = "card"
+    novaDiv['className'] = "card col-md-3 col-sm-12"
     containerCarrinho.appendChild(novaDiv);
 
     //cria a imagem dentro da div do card
     let img = document.createElement('img')
-    img['src'] = produto.img    
+    img['src'] = produto.img
     novaDiv.appendChild(img)
 
     //Cria o titulo do produto na div
@@ -103,7 +103,7 @@ function carregaCarrinho(produtosCarrinho) {
     pMarca['className'] = "marca"
     pMarca.textContent = produto.marca
     novaDiv.appendChild(pMarca)
-  }   
+  }
 }
 
 
@@ -111,7 +111,7 @@ function carregaProdutos(dadosProdutos, categoria) {
   let containerCategoria = document.getElementById("containerCategoria")
 
   let child = containerCategoria.lastElementChild
-  while (child){
+  while (child) {
     containerCategoria.removeChild(child)
     child = containerCategoria.lastElementChild
   }
@@ -123,10 +123,10 @@ function carregaProdutos(dadosProdutos, categoria) {
   containerCategoria.appendChild(titulo)
 
   //Carrega todos os produtos no container (div)
-  let containerProdutos =  document.getElementById("containerProdutos")
+  let containerProdutos = document.getElementById("containerProdutos")
 
   child = containerProdutos.lastElementChild
-  while (child){
+  while (child) {
     containerProdutos.removeChild(child)
     child = containerProdutos.lastElementChild
   }
@@ -134,12 +134,12 @@ function carregaProdutos(dadosProdutos, categoria) {
   for (let produto of dadosProdutos) {
     //Cria a div card para o produto
     let novaDiv = document.createElement('div')
-    novaDiv['className'] = "card"
+    novaDiv['className'] = "card col-md-3 col-sm-12"
     containerProdutos.appendChild(novaDiv);
 
     //cria a imagem dentro da div do card
     let img = document.createElement('img')
-    img['src'] = produto.img    
+    img['src'] = produto.img
     novaDiv.appendChild(img)
 
     //Cria o titulo do produto na div
@@ -165,28 +165,72 @@ function carregaProdutos(dadosProdutos, categoria) {
 
     //Cria o botão
     //<p><button>Comprar</button></p>
-    let pComprar = document.createElement('p')    
+    let pComprar = document.createElement('p')
     novaDiv.appendChild(pComprar)
     let bBotao = document.createElement('button')
     bBotao['id'] = produto.id
     bBotao.onclick = comprarItemClick
     bBotao.textContent = "Comprar"
     pComprar.appendChild(bBotao)
-  }   
+  }
 }
 
-const filterLivros = function(produto){
+const filterLivros = function (produto) {
   return produto.categoria == "Livros"
 }
 
-const carregarLivrosClick = function(){ 
-  apenasLivros = dadosProdutos.produtos.filter(filterLivros) 
-  carregaProdutos(apenasLivros, "Livros")
+const pesquisar = function () {
+  let select = document.getElementById("searchCat");
+
+  let selectInput = select.options[select.selectedIndex].value;
+  let textInput = document.getElementById("searchBox").value.toLowerCase();
+
+  let resultado = dadosProdutos.produtos.filter(produto => {
+    let nomeProduto = produto.titulo.toLowerCase();
+    let marcaProduto = produto.marca.toLowerCase();
+
+    if (nomeProduto.includes(textInput)) {
+      if (selectInput == "Todos") {
+        return true
+      } else if (selectInput == produto.categoria) {
+        return true
+      }
+    }else if(marcaProduto.includes(textInput)){
+      return true
+    }else{
+      return false
+    }
+  })
+carregaProdutos(resultado, resultado.length + " resultados")
 }
 
-const comprarItemClick = function (){
+const carregarLivrosClick = function () {
+  apenasLivros = dadosProdutos.produtos.filter(filterLivros)
+  carregaProdutos(apenasLivros, apenasLivros.length + " Livros")
+}
+
+const carregarCasaClick = function () {
+  apenasCasa = dadosProdutos.produtos.filter(produto => produto.categoria == "Casa e Cozinha")
+  carregaProdutos(apenasCasa, apenasCasa.length + " produtos de Casa e Cozinha")
+}
+
+const carregarEletroClick = function () {
+  apenasEletro = dadosProdutos.produtos.filter(produto => produto.categoria == "Eletrônicos e Tecnologia")
+  carregaProdutos(apenasEletro, apenasEletro.length + " produtos de Eletrônicos e Tecnologia")
+}
+
+const carregarBelezaClick = function () {
+  apenasBeleza = dadosProdutos.produtos.filter(produto => produto.categoria == "Beleza")
+  carregaProdutos(apenasBeleza, apenasBeleza.length + " produtos de Beleza")
+}
+
+const carregarTodosClick = function () {
+  carregaProdutos(dadosProdutos.produtos, dadosProdutos.produtos.length + " Produtos");
+}
+
+const comprarItemClick = function () {
   console.log("Comprando item ", this.id)
-  let produto = dadosProdutos.produtos.filter( produto => produto.id == this.id)[0]
+  let produto = dadosProdutos.produtos.filter(produto => produto.id == this.id)[0]
   carrinho.push(produto);
 }
 

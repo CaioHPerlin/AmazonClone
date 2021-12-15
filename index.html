@@ -8,68 +8,69 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico" />
     <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
 </head>
 
-<body>
-    <header class="unstyled-links text-white w-100">
+<body onload="init()">
+    <header class="unstyled-links text-white" id="page-top">
         <!--Primeira Linha-->
-        <div class="row upper-header">
-            <div class="side-nav col-2 d-inline-flex justify-between px-3 py-3">
-                <div class="col-7">
+        <div class="row flex-nowrap upper-header mw-100 w-100 justify-between">
+            <div class="side-nav col-lg-2 col-sm-4 d-inline-flex justify-between px-3 py-3">
+                <div class="col-lg-7 col-sm-12">
                     <!--Aqui deve ser colocado a logomarca da Amazon com o link-->
                     <a href="./index.html" class="d-inline-flex align-left">
                         <img class="img-fluid logo" src="./img/logo-amazon.svg" alt="Amazon">
                         <span>.com.br</span>
                     </a>
                 </div>
-                <a href="#" class=" col-4 d-inline-flex align-items-center">
+                <a href="#" class="d-none d-lg-inline-flex col-lg-4 align-items-center">
                     <!--Aqui ficara o link com # para entregas para o Brasil-->
                     <i class="bi bi-geo-alt left"></i>
                     <div class="d-flex flex-column align-middle">
                         <p>
-                            <span class="text-muted text-nowrap">Enviar para CARMEN</span>
-                            <b>Nova Andradina</b>
+                            <span class="text-muted text-nowrap">Olá</span><br>
+                            <b class="text-nowrap" overflow="hidden" id="userlocation"></b>
                         </p>
                     </div>
                 </a>
             </div>
 
-            <div class="middle-nav col-7 px-5">
+            <div class="middle-nav col-lg-7 col-sm-7">
                 <!--Local destinado a barra de pesquisa-->
                 <form method="GET">
                     <div class="input-group mt-1">
                         <div class="dropdown input-group-btn">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <small>Todos</small>
-                            </button>
+                            <select id="searchCat" class="search-cat btn btn-default">
+                                <option value="Todos">Todos</option>
+                                <option value="Livros">Livros</option>
+                                <option value="Casa e Cozinha">Casa e Cozinha</option>
+                                <option value="Eletrônicos e Tecnologia">Eletrônicos e Tecnologia</option>
+                                <option value="Beleza">Beleza</option>
+                                <option value="Roupas">Roupas</option>
+                                <option value="Brinquedos">Brinquedos</option>
+                            </select>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Livros</a></li>
-                                <li><a class="dropdown-item" href="#">Casa e Cozinha</a></li>
-                                <li><a class="dropdown-item" href="#">Eletrônicos e Tecnologia</a></li>
-                                <li><a class="dropdown-item" href="#">Beleza</a></li>
-                                <li><a class="dropdown-item" href="#">Roupas</a></li>
-                                <li><a class="dropdown-item" href="#">Brinquedos</a></li>
+                                
                             </ul>
                         </div>
-                        <input type="text" class="form-control" name="x" id="search">
+                        <input type="text" class="form-control" id="searchBox">
                         <span class="input-group-btn">
-                            <button class="search btn btn-warning" type="button">
+                            <button class="search btn btn-warning" onclick="pesquisar()" type="button">
                                 <i class="bi bi-search"></i>
                             </button>
                         </span>
                     </div>
                 </form>
             </div>
-            <div class="side-nav col-2 d-inline-flex justify-between px-3 py-2">
-                <div class="dropdown">
+
+            <div class="side-nav col-lg-3 d-inline-flex justify-between px-3 py-2">
+                <div class="dropdown col-lg-4">
                     <!--Colocar o dropdown apenas com o botão para ir para a tela de login e fazer a tela de login-->
-                    <a href="#" class="dropdown-toggle col-4 d-inline-flex align-items-center" role="button"
+                    <a href="#" class="dropdown-toggle d-inline-flex align-items-center" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <div class="d-flex flex-column align-middle">
                             <p>
-                                <span class="text-nowrap">Olá, CARMEN</span>
+                                <span class="text-nowrap">Olá, <span id="username"></span></span>
                                 <b class="text-nowrap">Contas e Listas</b>
                             </p>
                         </div>
@@ -79,9 +80,9 @@
                         <a class="btn btn-warning login-btn px-5 py-1">Faça seu login</a>
                     </div>
                 </div>
-                <div>
+                <div class="col-lg-4">
                     <!--Fazer apenas um link com # para Returns & Oders-->
-                    <a href="#" class=" col-4 d-inline-flex align-items-center">
+                    <a href="#" class="d-inline-flex align-items-center">
                         <div class="d-flex flex-column">
                             <p>
                                 <span class="text-nowrap">Devoluções e</span>
@@ -90,9 +91,9 @@
                         </div>
                     </a>
                 </div>
-                <div>
+                <div class="col-lg-4">
                     <!--Fazer apenas um link com # para o carrinho de compras-->
-                    <a href="#" class=" col-4 d-inline-flex align-items-end">
+                    <a href="#" onclick="carregaCarrinho(carrinho)" class="d-inline-flex align-items-end">
                         <i class="bi bi-cart"></i>
                         <b class="pb-1">Carrinho</b>
                     </a>
@@ -108,13 +109,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link d-flex align-items-center" href="#"><i class="bi bi-list"
+                    <li class="nav-item"><a onclick="carregarTodosClick()" class="nav-link d-flex align-items-center" href="#"><i class="bi bi-list"
                                 style="font-size: 20px;"></i>Todos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Casa e Cozinha</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Eletrônicos e Tecnologia</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Beleza</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Roupas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Brinquedos</a></li>
+                    <li class="nav-item"><a onclick="carregarLivrosClick()" class="nav-link" href="#">Livros</a></li>
+                    <li class="nav-item"><a onclick="carregarCasaClick()" class="nav-link" href="#">Casa e Cozinha</a></li>
+                    <li class="nav-item"><a onclick="carregarEletroClick()" class="nav-link" href="#">Eletrônicos e Tecnologia</a></li>
+                    <li class="nav-item"><a onclick="carregarBelezaClick()" class="nav-link" href="#">Beleza</a></li>
+                    <li class="nav-item"><a onclick="carregarLivrosClick()" class="nav-link" href="#">Roupas</a></li>
+                    <li class="nav-item"><a onclick="carregarLivrosClick()" class="nav-link" href="#">Brinquedos</a></li>
                 </ul>
                 <span class="navbar-text h5">
                     <a href="#">Fim de Ano: Presentes para surpreender</a>
@@ -152,12 +154,14 @@
         </article>
         <article>
             <!--Aqui a estrutura pode ser livre desde que tenha quatro produtos por linha quando a página for aberta em um desktop e um produto por linha quando for aberto em um smartphone-->
-            <div id="containerCategoria">
+            <div id="containerCategoria" class="row">
             </div>
-            <div id="containerProdutos">
+            <div id="containerProdutos" class="row">
             </div>
-            <div id="containerCarrinho">
+            <div id="containerCarrinho" class="row mt-5 mb-5">
             </div>
+            <button id="clear" onclick="limpaCarrinho(carrinho)" class="btn btn-danger">Limpar</button>
+            <button id="remove" onclick="removeCarrinho(carrinho)" class="btn btn-danger">Remover último item</button>
         </article>
         <aside>
             <!--Do lado direito ocupando toda a extensão vertical do section colocar propagandas do amazon prime-->
@@ -165,10 +169,12 @@
     </section>
     <footer class="w-100 text-white unstyled-links">
         <!--Primeira linha-->
-        <button class="back-to-top btn btn-default text-white py-2 w-100">
-            <!-- Back to top -->
-            <small>Voltar ao início</small>
-        </button>
+        <a href="#page-top">
+          <button class="back-to-top btn btn-default text-white py-2 w-100">
+              <!-- Back to top -->
+              <small>Voltar ao início</small>
+          </button>
+        </a>
         <!--Segunda linha-->
         <div class="footer-content py-5">
             <div class="container">

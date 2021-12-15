@@ -9,6 +9,10 @@
     --bg: #eaeded;
 }
 
+header{
+  background: var(--primary);
+}
+
 .text-muted{
     color: var(--muted) !important;
 }
@@ -35,8 +39,9 @@ nav ul li{
     font-size: 26px !important;
 }
 
-header .dropdown-toggle{
+header .search-cat{
     border-radius: 5px 0px 0px 5px;
+    max-width: 100px;
 }
 
 .search{ 
@@ -76,7 +81,6 @@ header .dropdown-toggle{
     height: 40px;
 }
 
-
 .card {
     text-align: center;
 }
@@ -111,6 +115,7 @@ body{
 
 .back-to-top{
     background: var(--tertiary);
+    border-radius: 0px;
 }
 
 .back-to-top:hover{
