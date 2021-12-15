@@ -12,58 +12,91 @@
 </head>
 
 <body onload="init()">
-	<header class="unstyled-links text-white" id="page-top">
+	<header class="unstyled-links text-nowrap text-white" id="page-top">
 		<!--Primeira Linha-->
-		<div class="upper-header text-nowrap mw-100 row px-3 py-3">
-			<div class="col row">
-				<a href="index.html" class="col">
-					<!--Aqui deve ser colocado a logomarca da Amazon com o link-->
-					<img class="logo" src="./img/logo-amazon.svg" alt="Amazon">.com.br
-          </a>
-          <a href="#" class="col">
-            <!--Aqui ficara o link com # para entregas para o Brasil-->
-            <i style="font-size: 16px;"class="bi bi-geo-alt"></i>
-            <b id="userlocation"></b>
-          </a>
-      </div>
-      <div class="col-6">
-        <!--Local destinado a barra de pesquisa-->
+		<div class="upper-header row container-fluid justify-content-evenly align-items-center px-3 py-2 mx-0">
+			<div class="col-lg-4 col-sm-3 row">
+				<a href="index.html" class="col-lg-6 col-sm-6">
+          <!--Aqui deve ser colocado a logomarca da Amazon com o link-->
+          <center>
+            <img class="logo" src="./img/logo-amazon.svg" alt="Amazon"><span class="d-none d-lg-inline-flex">.com.br</span>
+          </center>
+        </a>
+        <a href="#" class="d-none d-lg-flex col-6">
+          <!--Aqui ficara o link com # para entregas para o Brasil-->
+          <i style="font-size: 16px;"class="bi bi-geo-alt"></i>
+          <b id="userlocation"></b>
+        </a>
 
-      </div>
-
-      <div class="col">
-        <div>
+        <!--ONLY FOR XS-->
+        <div class="d-flex d-sm-none mx-auto">
           <!--Colocar o dropdown apenas com o botão para ir para a tela de login e fazer a tela de login-->
-          <form method="GET">
-            <div class="input-group mt-1">
-                        <div class="dropdown input-group-btn">
-                            <select id="searchCat" class="search-cat btn btn-default">
-                                <option value="Todos">Todos</option>
-                                <option value="Livros">Livros</option>
-                                <option value="Casa e Cozinha">Casa e Cozinha</option>
-                      <option value="Eletrônicos e Tecnologia">Eletrônicos e Tecnologia</option>
-                                <option value="Beleza">Beleza</option>
-                                <option value="Roupas">Roupas</option>
-                                <option value="Brinquedos">Brinquedos</option>
-                            </select>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                
-                            </ul>
-                        </div>
-                        <input type="text" class="form-control" id="searchBox">
-                        <span class="input-group-btn">
-                            <button class="search btn btn-warning" onclick="pesquisar()" type="button">
-                                <i class="bi bi-search"></i>
-                            </button>
-                </span>
+          <a class="btn btn-default col-6 d-sm-flex d-lg-none" href="./secoes/login.html"><i style="font-size: 32px;" class="bi bi-person-fill"></i></a>
+          <a class="mx-2 btn btn-default col-6 d-sm-flex d-lg-none" href="#" onclick="carregaCarrinho(carrinho)"><i style="font-size: 32px;" class="bi bi-cart-fill"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-5 col-sm-6 mt-sm-0 mt-3">
+        <!--Local destinado a barra de pesquisa-->
+        <form method="GET">
+          <div class="input-group my-auto">
+            <div class="dropdown input-group-btn">
+              <select id="searchCat" class="search-cat custom-select">
+                <option value="Todos">Todos</option>
+                <option value="Livros">Livros</option>
+                <option value="Casa e Cozinha">Casa e Cozinha</option>
+                <option value="Eletrônicos e Tecnologia">Eletrônicos e Tecnologia</option>
+                <option value="Beleza">Beleza</option>
+                <option value="Roupas">Roupas</option>
+                <option value="Brinquedos">Brinquedos</option>
+              </select>
             </div>
-          </form>
+            <input type="text" class="form-control" id="searchBox">
+            <span class="input-group-btn">
+              <button class="search btn btn-warning" onclick="pesquisar()" type="button">
+                <i class="bi bi-search"></i>
+              </button>
+            </span>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-lg-3 col-sm-2 row flex-nowrap d-sm-flex d-none">
+        <!--Colocar o dropdown apenas com o botão para ir para a tela de login e fazer a tela de login-->
+        <a class="btn btn-default col-6 d-sm-flex d-lg-none" href="./secoes/login.html"><i style="font-size: 32px;" class="mx-5 mx-sm-0 bi bi-person-fill"></i></a>
+        <a class=" btn btn-default col-6 d-sm-flex d-lg-none" href="#" onclick="carregaCarrinho(carrinho)"><i style="font-size: 32px;" class="mx-5 mx-sm-0 bi bi-cart-fill"></i></a>
+
+        <div class="col-5 d-none d-lg-flex dropdown">
+          <a href="#" class="dropdown-toggle d-inline-flex align-items-center" role="button"
+          data-bs-toggle="dropdown" aria-expanded="false">
+            <p>
+              <span class="text-nowrap">Olá, <span id="username"></span></span><br>
+              <b class="text-nowrap">Contas e Listas</b>
+            </p>
+          </a>
+
+          <div class="dropdown-menu py-4 px-5" aria-labelledby="dropdownMenuLink">
+            <a href="./secoes/login.html" class="btn btn-warning login-btn px-5 py-1">Faça seu login</a>
+          </div>
         </div>
-        <div>
-          <!--Fazer apenas um link com # para Returns & Oders-->
+
+        <div class="col-4 d-none d-lg-flex">
+          <a href="#" class="d-inline-flex align-items-center">
+            <div class="d-flex flex-column">
+              <p>
+                <span class="text-nowrap">Devoluções</span><br>
+                <b>e Pedidos</b>
+              </p>
+            </div>
+          </a>
         </div>
-        <div>
+
+        <div class="col-2 d-none d-lg-flex">
           <!--Fazer apenas um link com # para o carrinho de compras-->
+          <a href="#" onclick="carregaCarrinho(carrinho)">
+            <i style="font-size: 24px;" class="bi bi-cart-fill"></i>
+            <b class="pb-1">Carrinho</b>
+          </a>
         </div>
       </div>
 
@@ -71,30 +104,29 @@
 		<!--Segunda linha-->
 		<nav class="navbar navbar-expand-lg sub-belt links-unstyled w-100 fw-bolder">
 			<!--Desenvolver o menu horizontal-->
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a onclick="carregarTodosClick()" class="nav-link d-flex align-items-center" href="#"><i class="bi bi-list"
-                                style="font-size: 20px;"></i>Todos</a></li>
-                    <li class="nav-item"><a onclick="carregarLivrosClick()" class="nav-link" href="#">Livros</a></li>
-                    <li class="nav-item"><a onclick="carregarCasaClick()" class="nav-link" href="#">Casa e Cozinha</a></li>
-                    <li class="nav-item"><a onclick="carregarEletroClick()" class="nav-link" href="#">Eletrônicos e Tecnologia</a></li>
-                    <li class="nav-item"><a onclick="carregarBelezaClick()" class="nav-link" href="#">Beleza</a></li>
-                    <li class="nav-item"><a onclick="carregarLivrosClick()" class="nav-link" href="#">Roupas</a></li>
-                    <li class="nav-item"><a onclick="carregarLivrosClick()" class="nav-link" href="#">Brinquedos</a></li>
-                </ul>
-                <span class="navbar-text h5">
-                    <a href="#">Fim de Ano: Presentes para surpreender</a>
-                </span>
-            </div>
-        </nav>
+			<button class="w-100 collapse-btn text-white btn d-sm-flex d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLg" aria-expanded="false" aria-controls="navbarLg">
+        <center class="h5 d-inline-flex align-items-center">Categorias<i class="p-2 bi bi-list"></i></center>
+      </button>
+
+      <div class="collapse navbar-collapse d-lg-flex" id="navbarLg">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a onclick="carregarTodosClick()" class="nav-link d-flex align-items-center" href="#"><i class="d-none d-lg-flex bi bi-list" style="font-size: 20px;"></i>Todos</a></li>
+          <li class="nav-item"><a onclick="carregarLivrosClick()" class="nav-link" href="#">Livros</a></li>
+          <li class="nav-item"><a onclick="carregarCasaClick()" class="nav-link" href="#">Casa e Cozinha</a></li>
+          <li class="nav-item"><a onclick="carregarEletroClick()" class="nav-link" href="#">Eletrônicos e Tecnologia</a></li>
+          <li class="nav-item"><a onclick="carregarBelezaClick()" class="nav-link" href="#">Beleza</a></li>
+          <li class="nav-item"><a onclick="carregarLivrosClick()" class="nav-link" href="#">Roupas</a></li>
+          <li class="nav-item"><a onclick="carregarLivrosClick()" class="nav-link" href="#">Brinquedos</a></li>
+        </ul>
+        <span class="d-none d-lg-block navbar-text h5">
+            <a href="#"  style="overflow:hidden;">Fim de Ano: Presentes para surpreender</a>
+        </span>
+      </div>
+    </nav>
         <div>
         </div>
     </header>
-    <section class="container-md">
+    <section class="container">
         <article>
             <div id="carouselControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">

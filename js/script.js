@@ -75,7 +75,7 @@ function carregaCarrinho(produtosCarrinho) {
   for (let produto of produtosCarrinho) {
     //Cria a div card para o produto
     let novaDiv = document.createElement('div')
-    novaDiv['className'] = "card col-md-3 col-sm-12"
+    novaDiv['className'] = "card col-lg-3 col-sm-12"
     containerCarrinho.appendChild(novaDiv);
 
     //cria a imagem dentro da div do card
@@ -134,7 +134,7 @@ function carregaProdutos(dadosProdutos, categoria) {
   for (let produto of dadosProdutos) {
     //Cria a div card para o produto
     let novaDiv = document.createElement('div')
-    novaDiv['className'] = "card col-md-3 col-sm-12"
+    novaDiv['className'] = "card col-lg-3 col-sm-12"
     containerProdutos.appendChild(novaDiv);
 
     //cria a imagem dentro da div do card
