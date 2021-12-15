@@ -22,10 +22,6 @@ header{
     white-space: nowrap;
 }
 
-.side-nav .bi{
-    font-size: 17px;
-}
-
 nav *{
     font-weight: 600;
 }
