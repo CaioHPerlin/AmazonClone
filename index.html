@@ -152,20 +152,22 @@
                 </button>
             </div>
         </article>
-        <article>
-            <!--Aqui a estrutura pode ser livre desde que tenha quatro produtos por linha quando a página for aberta em um desktop e um produto por linha quando for aberto em um smartphone-->
-            <div id="containerCategoria" class="row">
-            </div>
-            <div id="containerProdutos" class="row">
-            </div>
-            <div id="containerCarrinho" class="row mt-5 mb-5">
-            </div>
-            <button id="clear" onclick="limpaCarrinho(carrinho)" class="btn btn-danger">Limpar</button>
-            <button id="remove" onclick="removeCarrinho(carrinho)" class="btn btn-danger">Remover último item</button>
-        </article>
-        <aside>
-            <!--Do lado direito ocupando toda a extensão vertical do section colocar propagandas do amazon prime-->
-        </aside>
+        <div class="row">
+          <article class="col-9">
+              <!--Aqui a estrutura pode ser livre desde que tenha quatro produtos por linha quando a página for aberta em um desktop e um produto por linha quando for aberto em um smartphone-->
+              <div id="containerCategoria" class="row">
+              </div>
+              <div id="containerProdutos" class="row">
+              </div>
+              <div id="containerCarrinho" class="row mt-5 mb-5">
+              </div>
+              <button id="clear" onclick="limpaCarrinho(carrinho)" class="btn btn-danger">Limpar</button>
+              <button id="remove" onclick="removeCarrinho(carrinho)" class="btn btn-danger">Remover último item</button>
+          </article>
+          <aside class="col-3 anuncio">
+              <!--Do lado direito ocupando toda a extensão vertical do section colocar propagandas do amazon prime-->
+          </aside>
+        </div>
     </section>
     <footer class="w-100 text-white unstyled-links">
         <!--Primeira linha-->

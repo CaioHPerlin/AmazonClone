@@ -156,6 +156,11 @@ body{
   text-align: left;
 }
 
+.anuncio{
+  background: url(../img/prime-ad.png);
+  background-position: center;
+}
+
 @media (min-width: 1140px) {
     .card img {
       width: 75%;
